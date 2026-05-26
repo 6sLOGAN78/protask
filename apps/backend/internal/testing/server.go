@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-boilerplate/internal/config"
-	"github.com/sriniously/go-boilerplate/internal/database"
-	"github.com/sriniously/go-boilerplate/internal/server"
+	"github.com/sriniously/go-protask/internal/config"
+	"github.com/sriniously/go-protask/internal/database"
+	"github.com/sriniously/go-protask/internal/server"
 )
 
 // CreateTestServer creates a server instance for testing
@@ -23,7 +23,7 @@ func CreateTestServer(logger *zerolog.Logger, db *TestDB) *server.Server {
 			},
 			NewRelic: config.NewRelicConfig{
 				LicenseKey:                "",    // Empty for tests
-				AppLogForwardingEnabled:   false, // Disabled for tests  
+				AppLogForwardingEnabled:   false, // Disabled for tests
 				DistributedTracingEnabled: false, // Disabled for tests
 				DebugLogging:              false, // Disabled for tests
 			},
