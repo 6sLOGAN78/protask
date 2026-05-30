@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/6sLOGAN78/go-protask/internal/config"
+	"github.com/6sLOGAN78/go-protask/internal/lib/email"
 	"github.com/hibiken/asynq"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/config"
-	"github.com/sriniously/go-protask/internal/lib/email"
 )
 
 var emailClient *email.Client

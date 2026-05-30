@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/6sLOGAN78/go-protask/internal/config"
+	"github.com/6sLOGAN78/go-protask/internal/database"
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/config"
-	"github.com/sriniously/go-protask/internal/database"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"

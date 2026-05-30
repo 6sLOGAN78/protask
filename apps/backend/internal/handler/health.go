@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/sriniously/go-protask/internal/middleware"
-	"github.com/sriniously/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/middleware"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 
 	"github.com/labstack/echo/v4"
 )

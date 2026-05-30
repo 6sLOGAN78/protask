@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/sriniously/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 )
 
 type RateLimitMiddleware struct {

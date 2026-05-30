@@ -1,9 +1,9 @@
 package job
 
 import (
+	"github.com/6sLOGAN78/go-protask/internal/config"
 	"github.com/hibiken/asynq"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/config"
 )
 
 type JobService struct {

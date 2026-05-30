@@ -1,8 +1,8 @@
 package middleware
 
 import (
+	"github.com/6sLOGAN78/go-protask/internal/server"
 	"github.com/newrelic/go-agent/v3/newrelic"
-	"github.com/sriniously/go-protask/internal/server"
 )
 
 type Middlewares struct {

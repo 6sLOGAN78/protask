@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/sriniously/go-protask/internal/handler"
+	"github.com/6sLOGAN78/go-protask/internal/handler"
 
 	"github.com/labstack/echo/v4"
 )

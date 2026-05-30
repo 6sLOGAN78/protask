@@ -3,10 +3,10 @@ package testing
 import (
 	"time"
 
+	"github.com/6sLOGAN78/go-protask/internal/config"
+	"github.com/6sLOGAN78/go-protask/internal/database"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/config"
-	"github.com/sriniously/go-protask/internal/database"
-	"github.com/sriniously/go-protask/internal/server"
 )
 
 // CreateTestServer creates a server instance for testing

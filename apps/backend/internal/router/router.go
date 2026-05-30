@@ -3,12 +3,12 @@ package router
 import (
 	"net/http"
 
+	"github.com/6sLOGAN78/go-protask/internal/handler"
+	"github.com/6sLOGAN78/go-protask/internal/middleware"
+	"github.com/6sLOGAN78/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/service"
 	"github.com/labstack/echo/v4"
 	echoMiddleware "github.com/labstack/echo/v4/middleware"
-	"github.com/sriniously/go-protask/internal/handler"
-	"github.com/sriniously/go-protask/internal/middleware"
-	"github.com/sriniously/go-protask/internal/server"
-	"github.com/sriniously/go-protask/internal/service"
 	"golang.org/x/time/rate"
 )
 

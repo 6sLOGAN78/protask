@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/sriniously/go-protask/internal/lib/job"
-	"github.com/sriniously/go-protask/internal/repository"
-	"github.com/sriniously/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/lib/job"
+	"github.com/6sLOGAN78/go-protask/internal/repository"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 )
 
 type Services struct {

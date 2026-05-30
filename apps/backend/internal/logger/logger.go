@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/6sLOGAN78/go-protask/internal/config"
 	"github.com/newrelic/go-agent/v3/integrations/logcontext-v2/zerologWriter"
 	"github.com/newrelic/go-agent/v3/newrelic"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/pkgerrors"
-	"github.com/sriniously/go-protask/internal/config"
 )
 
 // LoggerService manages New Relic integration and logger creation

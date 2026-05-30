@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/6sLOGAN78/go-protask/internal/errs"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 	"github.com/clerk/clerk-sdk-go/v2"
 	clerkhttp "github.com/clerk/clerk-sdk-go/v2/http"
 	"github.com/labstack/echo/v4"
-	"github.com/sriniously/go-protask/internal/errs"
-	"github.com/sriniously/go-protask/internal/server"
 )
 
 type AuthMiddleware struct {

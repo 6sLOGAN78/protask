@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/sriniously/go-protask/internal/server"
-	"github.com/sriniously/go-protask/internal/service"
+	"github.com/6sLOGAN78/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/service"
 )
 
 type Handlers struct {

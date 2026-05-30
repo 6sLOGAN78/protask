@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/sriniously/go-protask/internal/server"
+import "github.com/6sLOGAN78/go-protask/internal/server"
 
 type Repositories struct{}
 

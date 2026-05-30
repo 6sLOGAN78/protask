@@ -7,13 +7,13 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/6sLOGAN78/go-protask/internal/config"
+	"github.com/6sLOGAN78/go-protask/internal/database"
+	"github.com/6sLOGAN78/go-protask/internal/lib/job"
+	loggerPkg "github.com/6sLOGAN78/go-protask/internal/logger"
 	"github.com/newrelic/go-agent/v3/integrations/nrredis-v9"
 	"github.com/redis/go-redis/v9"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/config"
-	"github.com/sriniously/go-protask/internal/database"
-	"github.com/sriniously/go-protask/internal/lib/job"
-	loggerPkg "github.com/sriniously/go-protask/internal/logger"
 )
 
 type Server struct {

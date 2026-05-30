@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/sriniously/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 
 	"github.com/clerk/clerk-sdk-go/v2"
 )

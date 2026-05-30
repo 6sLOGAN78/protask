@@ -1,4 +1,4 @@
-module github.com/sriniously/go-protask
+module github.com/6sLOGAN78/go-protask
 
 go 1.24.5
 

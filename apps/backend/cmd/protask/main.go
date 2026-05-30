@@ -8,14 +8,14 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/sriniously/go-protask/internal/config"
-	"github.com/sriniously/go-protask/internal/database"
-	"github.com/sriniously/go-protask/internal/handler"
-	"github.com/sriniously/go-protask/internal/logger"
-	"github.com/sriniously/go-protask/internal/repository"
-	"github.com/sriniously/go-protask/internal/router"
-	"github.com/sriniously/go-protask/internal/server"
-	"github.com/sriniously/go-protask/internal/service"
+	"github.com/6sLOGAN78/go-protask/internal/config"
+	"github.com/6sLOGAN78/go-protask/internal/database"
+	"github.com/6sLOGAN78/go-protask/internal/handler"
+	"github.com/6sLOGAN78/go-protask/internal/logger"
+	"github.com/6sLOGAN78/go-protask/internal/repository"
+	"github.com/6sLOGAN78/go-protask/internal/router"
+	"github.com/6sLOGAN78/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/service"
 )
 
 const DefaultContextTimeout = 30

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/6sLOGAN78/go-protask/internal/server"
 	"github.com/rs/zerolog"
-	"github.com/sriniously/go-protask/internal/server"
 	"github.com/stretchr/testify/require"
 )
 

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/sriniously/go-protask/internal/server"
+	"github.com/6sLOGAN78/go-protask/internal/server"
 
 	"github.com/labstack/echo/v4"
 )
