@@ -56,3 +56,5 @@ tsconfig.tsbuildinfo
 .env
 .turbo
 .vscode
+Protask-backend_accessKeys.csv
+Protask-backend_credentials.csv
