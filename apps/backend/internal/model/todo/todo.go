@@ -53,7 +53,7 @@ type PopulatedTodo struct {
 	Category    *category.Category `json:"category" db:"category"`
 	Children    []Todo             `json:"children" db:"children"`
 	Comments    []comment.Comment  `json:"comments" db:"comments"`
-	Attachments []TodoAttachment   `json:"attachments" db:"attachments"`
+	Attachements []TodoAttachment   `json:"attachments" db:"attachments"`
 }
 
 type TodoStats struct {

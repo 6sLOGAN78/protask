@@ -8,6 +8,9 @@ import (
 type Handlers struct {
 	Health  *HealthHandler
 	OpenAPI *OpenAPIHandler
+	Todo   *TodoHandler
+	Comment *CommentHandler
+	Category *CategoryHandler
 }
 
 func NewHandlers(s *server.Server, services *service.Services) *Handlers {
