@@ -160,11 +160,11 @@ func LoadConfig() (*Config, error) {
 	envVars := make(map[string]string)
 	for _, env := range os.Environ() {
 		parts := strings.SplitN(env, "=", 2)
-		if len(parts) == 2 && strings.HasPrefix(parts[0], "TASKER_") {
+		if len(parts) == 2 && strings.HasPrefix(parts[0], "PROTASK_") {
 			key := parts[0]
 			value := parts[1]
 
-			configKey := strings.ToLower(strings.TrimPrefix(key, "TASKER_"))
+			configKey := strings.ToLower(strings.TrimPrefix(key, "PROTASK_"))
 
 			if mapData, isMap := parseMapString(value); isMap {
 				for mapKey, mapValue := range mapData {
@@ -177,8 +177,8 @@ func LoadConfig() (*Config, error) {
 		}
 	}
 
-	err := k.Load(env.ProviderWithValue("TASKER_", ".", func(key, value string) (string, any) {
-		return strings.ToLower(strings.TrimPrefix(key, "TASKER_")), value
+	err := k.Load(env.ProviderWithValue("PROTASK_", ".", func(key, value string) (string, any) {
+		return strings.ToLower(strings.TrimPrefix(key, "PROTASK_")), value
 	}), nil)
 	if err != nil {
 		logger.Fatal().Err(err).Msg("could not load initial env variables")
@@ -208,7 +208,7 @@ func LoadConfig() (*Config, error) {
 		mainConfig.Observability = DefaultObservabilityConfig()
 	}
 
-	mainConfig.Observability.ServiceName = "tasker"
+	mainConfig.Observability.ServiceName = "protask"
 	mainConfig.Observability.Environment = mainConfig.Primary.Env
 
 	if err := mainConfig.Observability.Validate(); err != nil {

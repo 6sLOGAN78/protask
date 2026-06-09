@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/6sLOGAN78/go-protask/internal/errs"
 	"github.com/6sLOGAN78/go-protask/internal/middleware"
 	"github.com/6sLOGAN78/go-protask/internal/model"
 	"github.com/6sLOGAN78/go-protask/internal/model/todo"
@@ -95,3 +96,62 @@ func (h *TodoHandler) GetTodoStats(c echo.Context) error {
 	)(c)
 }
 
+func (h *TodoHandler) UploadTodoAttachment(c echo.Context) error {
+	return Handle(
+		h.Handler,
+		func(c echo.Context, payload *todo.UploadTodoAttachmentPayload) (*todo.TodoAttachment, error) {
+			userID := middleware.GetUserID(c)
+
+			form, err := c.MultipartForm()
+			if err != nil {
+				return nil, errs.NewBadRequestError("multipart form not found", false, nil, nil, nil)
+			}
+
+			files := form.File["file"]
+			if len(files) == 0 {
+				return nil, errs.NewBadRequestError("no file found", false, nil, nil, nil)
+			}
+
+			if len(files) > 1 {
+				return nil, errs.NewBadRequestError("only one file allowed per upload", false, nil, nil, nil)
+			}
+
+			return h.todoService.UploadTodoAttachment(c, userID, payload.TodoID, files[0])
+		},
+		http.StatusCreated,
+		&todo.UploadTodoAttachmentPayload{},
+	)(c)
+}
+
+func (h *TodoHandler) DeleteTodoAttachment(c echo.Context) error {
+	return HandleNoContent(
+		h.Handler,
+		func(c echo.Context, payload *todo.DeleteTodoAttachmentPayload) error {
+			userID := middleware.GetUserID(c)
+			return h.todoService.DeleteTodoAttachment(c, userID, payload.TodoID, payload.AttachmentID)
+		},
+		http.StatusNoContent,
+		&todo.DeleteTodoAttachmentPayload{},
+	)(c)
+}
+
+func (h *TodoHandler) GetAttachmentPresignedURL(c echo.Context) error {
+	return Handle(
+		h.Handler,
+		func(c echo.Context, payload *todo.GetAttachmentPresignedURLPayload) (*struct {
+			URL string `json:"url"`
+		}, error,
+		) {
+			userID := middleware.GetUserID(c)
+			url, err := h.todoService.GetAttachmentPresignedURL(c, userID, payload.TodoID, payload.AttachmentID)
+			if err != nil {
+				return nil, err
+			}
+			return &struct {
+				URL string `json:"url"`
+			}{URL: url}, nil
+		},
+		http.StatusOK,
+		&todo.GetAttachmentPresignedURLPayload{},
+	)(c)
+}
