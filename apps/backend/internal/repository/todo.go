@@ -179,7 +179,13 @@ func (r *TodoRepository) CheckTodoExists(ctx context.Context, userID string, tod
 	return &todoItem, nil
 }
 
-func (r *TodoRepository) GetTodos(ctx context.Context, userID string, query *todo.GetTodosQuery) (*model.PaginatedResponse[todo.PopulatedTodo], error) {
+
+
+func (r *TodoRepository) GetTodos(
+    ctx context.Context,
+    userID string,
+    query *todo.GetTodosQuery,
+) (*model.PaginatedResponse[todo.PopulatedTodo], error) {
 	stmt := `
 	SELECT
 		t.*,
