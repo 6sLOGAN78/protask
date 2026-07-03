@@ -161,9 +161,39 @@ Cross-cutting concerns:
 
 ### Testing
 
-#### Unit Tests
+The backend holds unit tests and automated database integration tests.
+
+#### 🐳 Database Integration Tests (Testcontainers)
+
+The repository tests for `TodoRepository`, `CommentRepository`, and `CategoryRepository` use **Testcontainers for Go** to dynamically spin up a temporary, isolated, and migrated PostgreSQL container for every test run.
+
+##### Prerequisites
+* You must have **Docker daemon running** on your local machine (e.g. Docker Desktop, Colima, or standard Linux Docker Engine).
+* The tests automate setting up test database migrations and cleanups.
+
+##### Running All Tests
+To run all tests (including database integration tests):
 ```bash
-go test ./...
+# Using go test
+go test -v ./...
+
+# Or using task
+task test
+```
+
+##### Running Repository-only Tests
+To test the database repositories only:
+```bash
+go test -v ./internal/repository/...
+```
+
+##### Running a Specific Repository Test
+```bash
+# Test comment repository only
+go test -v ./internal/repository -run TestCommentRepository
+
+# Test category repository only
+go test -v ./internal/repository -run TestCategoryRepository
 ```
 
 ## Logging
