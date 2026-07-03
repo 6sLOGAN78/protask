@@ -1,5 +1,8 @@
 # Go Boilerplate Backend
 
+> [!NOTE]
+> This backend is part of the `protask` monorepo. For monorepo-wide setup and scripts, please refer to the [Root README](../../README.md).
+
 A production-ready Go backend service built with Echo framework, featuring clean architecture, comprehensive middleware, and modern DevOps practices.
 
 ## Architecture Overview
