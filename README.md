@@ -84,6 +84,31 @@ To run frontend, backend, and all dependent packages simultaneously in developme
 ```bash
 bun dev
 ```
+
+---
+
+## 🐳 Running with Docker
+
+You can spin up the entire monorepo stack (PostgreSQL, Redis, Go Backend, and React Frontend) fully containerized with a single command.
+
+### Prerequisites
+* Ensure you have the **Docker daemon running** locally.
+
+### Spin up the Containers
+To build and launch all services, run the following command at the root of the repository:
+```bash
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_... docker compose up --build
+```
+> [!IMPORTANT]
+> The `VITE_CLERK_PUBLISHABLE_KEY` environment variable is required by the frontend build stage. Replace it with your actual Clerk Publishable credentials.
+
+Once the services are active:
+* **React Frontend**: `http://localhost:3000`
+* **Go Backend API**: `http://localhost:8080`
+* **Database (PostgreSQL)**: Port `5432`
+* **Cache (Redis)**: Port `6379`
+
+The database schema migrations run automatically on backend startup.
 This runs the Turborepo dev runner, starting both the backend service and the frontend Vite server.
 
 ---
