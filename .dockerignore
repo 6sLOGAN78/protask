@@ -1,0 +1,24 @@
+# Local dependency folders
+node_modules/
+**/node_modules/
+
+# Local build outputs
+dist/
+**/dist/
+.turbo/
+**/.turbo/
+
+# Version control
+.git
+.gitignore
+
+# Go binaries and build artifacts
+apps/backend/protask-server
+apps/backend/protask-cron
+apps/backend/bin/
+
+# Environment files
+.env
+.env.local
+apps/backend/.env
+apps/frontend/.env.local

@@ -9,11 +9,11 @@ services:
       POSTGRES_USER: protask_user
       POSTGRES_PASSWORD: protask_password
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U protask_user -d protask_db"]
+      test: [ "CMD-SHELL", "pg_isready -U protask_user -d protask_db" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -22,11 +22,11 @@ services:
     image: redis:8-alpine
     container_name: protask-redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: [ "CMD", "redis-cli", "ping" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -38,13 +38,15 @@ services:
     container_name: protask-backend
     ports:
       - "8080:8080"
+    env_file:
+      - apps/backend/.env
     environment:
       PROTASK_PRIMARY.ENV: "production"
       PROTASK_SERVER.PORT: "8080"
       PROTASK_SERVER.READ_TIMEOUT: "30"
       PROTASK_SERVER.WRITE_TIMEOUT: "30"
       PROTASK_SERVER.IDLE_TIMEOUT: "60"
-      PROTASK_SERVER.CORS_ALLOWED_ORIGINS: "http://localhost:3000"
+      PROTASK_SERVER.CORS_ALLOWED_ORIGINS: "http://localhost:3002"
       PROTASK_DATABASE.HOST: "db"
       PROTASK_DATABASE.PORT: "5432"
       PROTASK_DATABASE.USER: "protask_user"
@@ -78,7 +80,7 @@ services:
         VITE_ENV: production
     container_name: protask-frontend
     ports:
-      - "3000:80"
+      - "3002:80"
     depends_on:
       - backend
 
