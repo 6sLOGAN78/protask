@@ -121,6 +121,20 @@ task migrations:down         # Rollback last migration
 task tidy                    # Format and tidy dependencies
 ```
 
+### ⏰ Background Cron Jobs (Docker)
+
+The background cron job runner is compiled as `protask-cron` inside the backend container.
+
+To list all available cron jobs:
+```bash
+docker compose run backend ./protask-cron list
+```
+
+To run a specific cron job by name:
+```bash
+docker compose run backend ./protask-cron <job_name>
+```
+
 ### Project Structure
 
 #### Handlers (`internal/handler/`)
